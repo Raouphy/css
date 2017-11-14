@@ -1,0 +1,53 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+<div class="header">
+  <ul>
+    <li>Already have an Intuit account?</li>
+    <li>I forgot my User ID or Password</li>
+  </ul>
+
+  <div class="signup">
+    <button class="si">Sign in</button>
+  </div>
+
+</div>
+
+<div class="main">
+
+  <div class="text">
+        <p class="text3">One Account.<br />
+    Everything Intuit.
+    </p>
+
+    <p class="text4">Create an account for all of Intuit's products including Mint. <a href="#">Learn more</a></p>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, 'Email address', class: "email2" %><br />
+    <%= f.email_field :email, autofocus: true, class: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone, 'Phone (recommended)', class: "phone2" %>
+    <%= f.text_field :phone, class: "phone"%>
+    <p class="text1">Standard call, messaging or data rates may apply.</p>
+
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "pass2" %>
+    <% if @minimum_password_length %>
+
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off",class: "pass" %>
+  </div>
+
+
+  <div class="field1">
+    <%= f.submit "Create Account", class: "sign" %>
+  </div>
+<% end %>
+</div>
+
+<%= render "devise/shared/links" %>
